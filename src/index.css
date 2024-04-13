@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color-scheme: light dark;
+}
+html {
+  font-size: 62.5%; /* 1 rem = 10 px */
+}
+
+body {
+  font-size: 1.6rem; /* dejamos los tamaños de fuente por defecto */
+}
