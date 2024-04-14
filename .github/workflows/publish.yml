@@ -21,6 +21,6 @@ jobs:
           pnpm tsc && vite build # The build command of your project
 
       - name: Deploy to Hostinger
-        run: rsync -avz --delete dist/ u727157690@ftp://antonilopez.dev:public_html
+        run: scp -r dist/* u727157690@ftp://antonilopez.dev:public_html
         env:
           HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }} # SSH key for authentication
