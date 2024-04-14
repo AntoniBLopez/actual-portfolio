@@ -13,14 +13,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install rsync
-        run: sudo apt-get install rsync -y
+      - name: Install zip
+        run: sudo apt-get install zip -y
 
       - name: Build
         run: |
           pnpm tsc && vite build # The build command of your project
 
+      - name: Create zip file
+        run: zip -r dist.zip dist
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist.zip
+
       - name: Deploy to Hostinger
-        run: scp -r dist/* u727157690@ftp://antonilopez.dev:public_html
-        env:
-          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }} # SSH key for authentication
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          password: ${{ secrets.HOSTINGER_PASSWORD }}
+          script: |
+            unzip -o dist.zip -d /public_html
