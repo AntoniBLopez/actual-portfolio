@@ -1,35 +1,26 @@
-name: Generate a build and push to another branch
+name: Deploy to Hostinger
 
 on:
   push:
     branches:
-      - master # The branch name you are committing the new changes
+      - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    name: Build and Push
+    name: Deploy
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-
-      - name: Install all dependencies
-        run: pnpm install
+      - name: Install rsync
+        run: sudo apt-get install rsync -y
 
       - name: Build
         run: |
           pnpm tsc && vite build # The build command of your project
-          mkdir deploy
-          cp -r dist/* deploy/ # Copy the contents of dist to the deploy folder
 
-      - name: Push
-        uses: s0/git-publish-subdir-action@develop
+      - name: Deploy to Hostinger
+        run: rsync -avz --delete dist/ u727157690@ftp://antonilopez.dev:public_html
         env:
-          REPO: self
-          BRANCH: master # The branch name where you want to push the assets
-          FOLDER: deploy # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-          MESSAGE: "Build: ({sha}) {msg}" # The commit message
+          HOSTINGER_SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }} # SSH key for authentication
