@@ -1,9 +1,28 @@
-import React from 'react'
 import IMAGES from '../assets/Images'
+import gsap from "gsap";
+import { useRef } from 'react'
+import { useGSAP } from "@gsap/react";
+import Card from '../components/Card'
+
 
 function MyCvWeb() {
+  const container = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    // gsap code here...
+    gsap.to(".box", {
+      // x: 100,
+      duration: 5,
+      x: "+=100",
+      rotateZ: 360,
+      repeat: -1,
+      transformOrigin: "center 100%"
+    }); // <-- automatically reverted
+
+  }, { scope: container }); // <-- scope is for selector text (optional)
+
   return (
-    <div className='flex flex-col h-screen gap-20 bg-white dark:bg-gray-800'>
+    <div className='flex flex-col h-screen gap-20 bg-gray-800'>
       <div className='flex flex-col gap-6 mx-10'>
         <header className='flex flex-col items-center mt-5 gap-10'>
           <div className='flex flex-row gap-10'>
@@ -33,11 +52,25 @@ function MyCvWeb() {
             Antoni Bassols Lopez
           </h1>
           <div className="m-4 text-red-500 dark:text-blue-200">Red</div>
+
+          <h1>Stack | Technologies</h1>
+
+          <h1>Projects</h1>
+          <div className='flex flex-row items-center space-x-10'>
+            <Card name="1" />
+            <Card name="2" />
+          </div>
+
+          <h1>Experience</h1>
+          <h1>Education</h1>
         </main>
 
-        {/* <footer>
+        <div className='w-auto h-0.5 mt-3 mb-4 bg-slate-700' />
 
-    </footer> */}
+        <footer ref={container}>
+          <div className='box fixed top-5 right-96 w-10 h-10 bg-white rounded-full filter drop-shadow-3xl'></div>
+        </footer>
+
       </div>
     </div>
   )

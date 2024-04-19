@@ -1,6 +1,6 @@
-import MyCvWeb from './components/MyCvWeb'
-import Home from './components/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import MyCvWeb from './pages/MyCvWeb'
+// import Home from './pages/Home'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -8,7 +8,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
+          {/* <Route path='/' element={<Home />} /> */}
+          <Route path='/' element={<Navigate to='/cv' />} />
           <Route path='/cv' element={<MyCvWeb />} />
           {/* <Route path='/home'>
             <Route index element={isAuth ? <HomePage /> : <Navigate to='/' />} />

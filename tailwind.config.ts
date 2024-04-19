@@ -6,7 +6,11 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      dropShadow: {
+        '3xl': '0px 0px 10px #0061FF',
+      }
+    },
   },
   plugins: [],
 } satisfies Config
