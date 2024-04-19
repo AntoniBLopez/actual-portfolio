@@ -1,5 +1,7 @@
 const IMAGES = {
   profileCV: new URL('./profile.jpg', import.meta.url).href,
+  spanish: new URL('./spain-flag.png', import.meta.url).href,
+  english: new URL('./america-flag.png', import.meta.url).href,
   darkIcon: (<svg
     width='16'
     height='16'
