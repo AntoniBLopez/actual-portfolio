@@ -1,25 +1,18 @@
 import IMAGES from '../assets/Images'
-import gsap from "gsap";
 import { useRef } from 'react'
-import { useGSAP } from "@gsap/react";
 import Card from '../components/Card'
+import { useState } from 'react';
 
 
 function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    // gsap code here...
-    gsap.to(".box", {
-      // x: 100,
-      duration: 5,
-      x: "+=100",
-      rotateZ: 360,
-      repeat: -1,
-      transformOrigin: "center 100%"
-    }); // <-- automatically reverted
+  const [isChecked, setIsChecked] = useState(false)
 
-  }, { scope: container }); // <-- scope is for selector text (optional)
+  const handleCheckboxChange = () => {
+    console.log('swiched')
+    setIsChecked(!isChecked)
+  }
 
   return (
     <div className='flex flex-col h-screen gap-20 bg-gray-800'>
@@ -36,6 +29,35 @@ function MyCvWeb() {
               <div className='w-auto h-0.5 mt-3 mb-4 bg-white' />
               <h2>Frontend Software Developer</h2>
             </section>
+            <label className='themeSwitcherTwo shadow-card h-fit relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-white p-1'>
+              <input
+                type='checkbox'
+                className='sr-only'
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              />
+              <span
+                className={`flex items-center space-x-[6px] rounded py-2 px-[18px] text-sm font-medium dark:text-slate-700 ${!isChecked ? 'text-primary bg-[#f4f7ff]' : 'text-body-color'
+                  }`}
+              >
+                {IMAGES.lightIcon}
+                Light
+              </span>
+              <span
+                className={`flex items-center space-x-[6px] rounded py-2 px-[18px] text-sm font-medium dark:text-slate-700 ${isChecked ? 'text-primary bg-[#f4f7ff]' : 'text-body-color'
+                  }`}
+              >
+                {IMAGES.darkIcon}
+                Dark
+              </span>
+            </label>
+            <div>
+              <label className="relative inline-flex cursor-pointer items-center">
+                <input type="checkbox" className="peer sr-only" />
+                <label className="hidden"></label>
+                <div className="peer h-4 w-11 rounded-full border bg-slate-200 after:absolute after:-top-1 after:left-0 after:h-6 after:w-6 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-green-300 peer-checked:after:translate-x-full peer-focus:ring-green-300"></div>
+              </label>
+            </div>
           </div>
           <div>
             <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, laborum eos! Odit blanditiis vitae iure asperiores omnis adipisci, harum, aperiam vero doloribus consequatur dolores quis numquam nobis illo iste ducimus.</h3>
@@ -68,7 +90,7 @@ function MyCvWeb() {
         <div className='w-auto h-0.5 mt-3 mb-4 bg-slate-700' />
 
         <footer ref={container}>
-          <div className='box fixed top-5 right-96 w-10 h-10 bg-white rounded-full filter drop-shadow-3xl'></div>
+          <div></div>
         </footer>
 
       </div>
