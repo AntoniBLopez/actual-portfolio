@@ -2,11 +2,19 @@ const IMAGES = {
   profileCV: new URL('./profile.jpg', import.meta.url).href,
   spanish: new URL('./spain-flag.png', import.meta.url).href,
   english: new URL('./america-flag.png', import.meta.url).href,
+  socialMedia: {
+    linkedin: <svg className="text-black dark:text-white fill-current w-8 h-8 hover:scale-110 hover:text-primaryLight dark:hover:text-primaryDark" xmlns="http://www.w3.org/2000/svg" viewBox="3 3 23 23">
+      <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+    </svg>,
+    youtube: <svg className="text-black  w-10 h-10 dark:text-white fill-current hover:scale-110 hover:text-primaryLight dark:hover:text-primaryDark" xmlns="http://www.w3.org/2000/svg" viewBox="3 3 43 43">
+    <path d="M 44.898438 14.5 C 44.5 12.300781 42.601563 10.699219 40.398438 10.199219 C 37.101563 9.5 31 9 24.398438 9 C 17.800781 9 11.601563 9.5 8.300781 10.199219 C 6.101563 10.699219 4.199219 12.199219 3.800781 14.5 C 3.398438 17 3 20.5 3 25 C 3 29.5 3.398438 33 3.898438 35.5 C 4.300781 37.699219 6.199219 39.300781 8.398438 39.800781 C 11.898438 40.5 17.898438 41 24.5 41 C 31.101563 41 37.101563 40.5 40.601563 39.800781 C 42.800781 39.300781 44.699219 37.800781 45.101563 35.5 C 45.5 33 46 29.398438 46.101563 25 C 45.898438 20.5 45.398438 17 44.898438 14.5 Z M 19 32 L 19 18 L 31.199219 25 Z"></path>
+    </svg>,
+  },
   darkIcon: (<svg
     width='16'
     height='16'
     viewBox='0 0 16 16'
-    className='mr-[6px] fill-current text-white dark:text-slate-700'
+    className='mr-[6px] fill-current text-slate-700'
   >
     <path
       fillRule='evenodd'
@@ -18,7 +26,7 @@ const IMAGES = {
     width='16'
     height='16'
     viewBox='0 0 16 16'
-    className='mr-[6px] fill-current text-white dark:text-slate-700'
+    className='mr-[6px] fill-current text-slate-700'
   >
     <g clipPath='url(#clip0_3122_652)'>
       <path
