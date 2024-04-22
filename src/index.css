@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
 }
 html {
   font-size: 62.5%; /* 1 rem = 10 px */
