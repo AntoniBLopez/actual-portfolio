@@ -1,49 +1,65 @@
 import { useRef } from 'react'
+import CVHeader from '../components/CVHeader';
 import Card from '../components/Card'
-import CVheader from '../components/CVheader'
+import useTheme from '../hooks/useTheme';
+// import Languages from '../translate/Languages.tsx'
+// import IMAGES from '../assets/Images';
+// import { useState } from 'react';
+// import { useEffect } from 'react';
 
 function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
 
+  const { isLightMode } = useTheme()
+
+  // const [isLightMode, setIsLightMode] = useState(true)
+  // const [isSpanish, setIsSpanish] = useState(true)
+
+  // const handleChange = () => {
+  //   setIsSpanish(!isSpanish)
+  // }
+
+  // useEffect(() => {
+  //   console.log(isLightMode)
+  // }, [isLightMode])
+
   return (
-    <div className='flex flex-col h-screen gap-20 bg-gray-800'>
-      <div className='flex flex-col gap-6 mx-10'>
+    <div className={isLightMode ? 'light' : 'dark'}>
+      <div className='flex flex-col h-screen gap-20 bg-slate-100 dark:bg-gray-800'>
+        <div className='flex flex-col gap-6 mx-10'>
 
-        <CVheader />
+          <CVHeader />
 
-        <div>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, laborum eos! Odit blanditiis vitae iure asperiores omnis adipisci, harum, aperiam vero doloribus consequatur dolores quis numquam nobis illo iste ducimus.</h3>
-        </div>
-
-        <div className='w-auto h-0.5 mt-3 mb-4 bg-slate-700' />
-
-        <main>
-          <section>
-            Youtube
-          </section>
-          <h1 className="text-3xl font-bold">
-            Antoni Bassols Lopez
-          </h1>
-          <div className="m-4 text-red-500 dark:text-blue-200">Red</div>
-
-          <h1>Stack | Technologies</h1>
-
-          <h1>Projects</h1>
-          <div className='flex flex-row items-center space-x-10'>
-            <Card name="1" />
-            <Card name="2" />
+          <div>
+            <h3 className='text-black dark:text-white'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, laborum eos! Odit blanditiis vitae iure asperiores omnis adipisci, harum, aperiam vero doloribus consequatur dolores quis numquam nobis illo iste ducimus.</h3>
           </div>
 
-          <h1>Experience</h1>
-          <h1>Education</h1>
-        </main>
+          <div className='w-auto h-0.5 mt-3 mb-4 bg-slate-700' />
 
-        <div className='w-auto h-0.5 mt-3 mb-4 bg-slate-700' />
+          <main>
+            <section>
 
-        <footer ref={container}>
-          <div></div>
-        </footer>
+            </section>
 
+            <h1 className='text-black dark:text-white'>Stack | Technologies</h1>
+
+            <h1 className='text-black dark:text-white'>Projects</h1>
+            <div className='flex flex-row items-center space-x-10'>
+              <Card name="1" />
+              <Card name="2" />
+            </div>
+
+            <h1 className='text-black dark:text-white'>Experience</h1>
+            <h1 className='text-black dark:text-white'>Education</h1>
+          </main>
+
+          <div className='w-auto h-0.5 mt-3 mb-4 bg-slate-700' />
+
+          <footer ref={container}>
+            <div></div>
+          </footer>
+
+        </div>
       </div>
     </div>
   )
