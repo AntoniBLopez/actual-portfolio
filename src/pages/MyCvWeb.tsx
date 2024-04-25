@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 import CVHeader from '../components/CVHeader';
 import Card from '../components/Card'
-import useTheme from '../hooks/useTheme';
+import { useSelector } from 'react-redux';
+// import useTheme from '../hooks/useTheme';
 // import Languages from '../translate/Languages.tsx'
 // import IMAGES from '../assets/Images';
 // import { useState } from 'react';
@@ -9,8 +10,9 @@ import useTheme from '../hooks/useTheme';
 
 function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
+  const isLightMode = useSelector(state => state.lightMode.value)
 
-  const { isLightMode } = useTheme()
+  // const { isLightMode } = useTheme()
 
   // const [isLightMode, setIsLightMode] = useState(true)
   // const [isSpanish, setIsSpanish] = useState(true)

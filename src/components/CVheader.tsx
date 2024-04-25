@@ -1,14 +1,18 @@
 import { useState } from "react"
 import IMAGES from "../assets/Images"
 import Languages from "../translate/Languages"
-import useTheme from "../hooks/useTheme"
+import { useSelector, useDispatch } from "react-redux"
+import { changeLightMode } from '../features/lightMode/lightModeSlice';
+// import useTheme from "../hooks/useTheme"
 
 
 function CVHeader() {
 
   // const [ isLightMode, setIsLightMode ] = useState(true)
+  // const { isLightMode, changeTheme } = useTheme()
   const [ isSpanish, setIsSpanish ] = useState(true)
-  const { isLightMode, changeTheme } = useTheme()
+  const isLightMode = useSelector(state => state.lightMode.value)
+  const dispatch = useDispatch()
 
   const handleChange = () => {
     setIsSpanish(!isSpanish)
@@ -39,7 +43,7 @@ function CVHeader() {
             type='checkbox'
             className='sr-only'
             // checked={isChecked}
-            onChange={() => changeTheme}
+            onChange={() => dispatch(changeLightMode())}
           />
           <span
             className={`flex items-center space-x-[6px] rounded py-2 px-[18px] text-sm font-medium dark:text-slate-700 ${!isLightMode ? 'bg-[#f4f7ff]' : 'bg-slate-200'
