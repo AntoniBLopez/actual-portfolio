@@ -1,7 +1,7 @@
 import { useState } from "react"
 import IMAGES from "../assets/Images"
 import Languages from "../translate/Languages"
-import { useSelector, useDispatch } from "react-redux"
+import { useAppSelector, useAppDispatch } from '../app/hooks';
 import { changeLightMode } from '../features/lightMode/lightModeSlice';
 // import useTheme from "../hooks/useTheme"
 
@@ -11,8 +11,8 @@ function CVHeader() {
   // const [ isLightMode, setIsLightMode ] = useState(true)
   // const { isLightMode, changeTheme } = useTheme()
   const [ isSpanish, setIsSpanish ] = useState(true)
-  const isLightMode = useSelector(state => state.lightMode.value)
-  const dispatch = useDispatch()
+  const isLightMode = useAppSelector(state => state.value)
+  const dispatch = useAppDispatch()
 
   const handleChange = () => {
     setIsSpanish(!isSpanish)

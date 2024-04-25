@@ -1,11 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {
+  createSlice,
+  // PayloadAction
 
+} from '@reduxjs/toolkit'
+import type { RootState } from '../../app/store'
 
-const isLightModeSlice = createSlice({
+interface LightModeState {
+  value: boolean
+}
+
+const initialState: LightModeState = {
+  value: true
+}
+
+export const lightModeSlice = createSlice({
   name: 'lightMode',
-  initialState: {
-    value: true
-  },
+  initialState,
   reducers: {
     changeLightMode: state => {
       state.value = !state.value
@@ -20,8 +30,13 @@ const isLightModeSlice = createSlice({
     // decremented: state => {
     //   state.value = !state.value
     // }
+    // Use the PayloadAction type to declare the contents of `action.payload`
+    // incrementByAmount: (state, action: PayloadAction<number>) => {
+    //   state.value += action.payload
+    // }
   }
 })
 
-export const { changeLightMode } = isLightModeSlice.actions
-export default isLightModeSlice.reducer
+export const { changeLightMode } = lightModeSlice.actions
+export const selectLightMode = (state: RootState) => state.value
+export default lightModeSlice.reducer
