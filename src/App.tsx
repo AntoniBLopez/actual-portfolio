@@ -4,7 +4,7 @@ import { useAppSelector } from './app/hooks';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 function App() {
-  const isLightMode = useAppSelector(state => state.value)
+  const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
 
   return (
     <div className={isLightMode ? 'light' : 'dark'}>

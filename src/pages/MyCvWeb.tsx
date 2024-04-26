@@ -6,7 +6,7 @@ function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
 
   return (
-    <div className='flex flex-col h-screen gap-20 bg-slate-100 dark:bg-gray-800'>
+    <div className='flex flex-col h-full gap-20 bg-slate-100 dark:bg-gray-800'>
       <div className='flex flex-col gap-6 mx-10'>
 
         <CVHeader />

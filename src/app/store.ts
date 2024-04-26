@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import isLightModeSlice from '../features/lightMode/lightModeSlice'
+import screenSizeSlice from '../features/screenSize/screenSizeSlice'
 
 export const store = configureStore({
-  reducer: isLightModeSlice
+  reducer: {isLightModeSlice, screenSizeSlice}
 })
 
 export type RootState =   ReturnType<typeof store.getState>

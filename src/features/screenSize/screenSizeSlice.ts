@@ -5,20 +5,20 @@ import {
 } from '@reduxjs/toolkit'
 import type { RootState } from '../../app/store'
 
-interface LightModeState {
-  value: boolean
+interface ScreenSizeState {
+  value: number
 }
 
-const initialState: LightModeState = {
-  value: true
+const initialState: ScreenSizeState = {
+  value: window.innerWidth
 }
 
-export const lightModeSlice = createSlice({
-  name: 'lightMode',
+export const screenSizeSlice = createSlice({
+  name: 'screenSize',
   initialState,
   reducers: {
-    changeLightMode: state => {
-      state.value = !state.value
+    changeScreenSize: state => {
+      state.value = window.innerWidth
     },
     // incremented: state => {
     //   // Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -37,6 +37,6 @@ export const lightModeSlice = createSlice({
   }
 })
 
-export const { changeLightMode } = lightModeSlice.actions
-export const selectLightMode = (state: RootState) => state.isLightModeSlice.value
-export default lightModeSlice.reducer
+export const { changeScreenSize } = screenSizeSlice.actions
+export const selectScreenSize = (state: RootState) => state.screenSizeSlice.value
+export default screenSizeSlice.reducer
