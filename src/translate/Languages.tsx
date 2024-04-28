@@ -2,11 +2,11 @@
 const Languages = {
   es: {
     profession: 'Desarrollador de Software Frontend',
-    professionShort: 'Desarrollador Fontend '
+    professionShort: 'Desarrollador Frontend '
   },
   en: {
     profession: 'Frontend Software Developer',
-    professionShort: 'Fontend Dev'
+    professionShort: 'Frontend Dev'
   }
 }
 
