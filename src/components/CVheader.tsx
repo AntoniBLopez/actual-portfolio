@@ -35,7 +35,7 @@ function CVHeader() {
               ('Antoni B. Lopez')
             }
           </h1>
-          <div className='w-auto h-px lg:h-px mt-1 mb-1 bg-black dark:bg-white' />
+          <div className='w-auto h-px lg:h-px mt-1 mb-1 bg-slate-700' />
           <h2 className='text-black dark:text-white'>
             {screenSize > 610
               ?
