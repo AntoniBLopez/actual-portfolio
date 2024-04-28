@@ -1,20 +1,19 @@
 import { useAppSelector } from "../app/hooks"
 import IMAGES from "../assets/Images"
 
-function Card({ name }: { name: string }) {
+function Card({ index }: { index: string }) {
   const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
+  console.log(index)
 
   return (
     <>
-      <div className="w-[30rem] h-[35rem] bg-gray-400 rounded-lg">
-        <div>{name}</div>
+      <div className="">
         <picture>
-          {/* <img src={IMAGES.projects.} alt="" /> */}
           {isLightMode
             ?
-            <img src={IMAGES.blackLaptop} alt="" />
+            <img src={IMAGES.blackLaptop} alt="Laptop image that has a project" />
             :
-            < img src={IMAGES.laptop} alt="" />
+            < img src={IMAGES.laptop} alt="Laptop image that has a project" />
           }
         </picture>
       </div>

@@ -22,11 +22,11 @@ function CVHeader() {
 
   return (
     <header className='grid grid-flow-col mt-5 gap-10 max-'>
-      <main className='flex flex-row max-lg:w-fit gap-10 max-lg:items-center justify-center max-lg:justify-start'>
+      <main className='flex flex-row w-fit gap-10 items-center justify-start'>
         <picture>
-          <img className='rounded-full object-cover w-36 h-36 max-lg:w-24 max-lg:h-24' src={IMAGES.profile} alt="This is the profile photo of the cv" />
+          <img className='w-24 lg:w-36 h-24 lg:h-36 rounded-full object-cover' src={IMAGES.profile} alt="This is the profile photo of the cv" />
         </picture>
-        <section className='flex flex-col justify-center '>
+        <section className='flex flex-col justify-center min-w-64'>
           <h1 className="text-3xl font-bold text-primaryLight dark:text-primaryDark">
             {screenSize > 610
               ?
@@ -35,14 +35,15 @@ function CVHeader() {
               ('Antoni B. Lopez')
             }
           </h1>
-          <div className='w-auto h-0.5 mt-1 mb-1 bg-black dark:bg-white' />
-          {screenSize > 610
-            ?
-            <h2 className='text-black dark:text-white'>{isSpanish ? Languages.es.profession : Languages.en.profession}</h2>
-            :
-            <h2 className='text-black dark:text-white'>{isSpanish ? Languages.es.professionShort : Languages.en.professionShort}</h2>
-
-          }
+          <div className='w-auto h-px lg:h-px mt-1 mb-1 bg-black dark:bg-white' />
+          <h2 className='text-black dark:text-white'>
+            {screenSize > 610
+              ?
+              isSpanish ? Languages.es.profession : Languages.en.profession
+              :
+              isSpanish ? Languages.es.professionShort : Languages.en.professionShort
+            }
+          </h2>
           {screenSize > 1024
             &&
             <div className='flex flex-row gap-3'>
@@ -61,7 +62,7 @@ function CVHeader() {
       }
       {screenSize > 1024
         ?
-        <aside className='flex flex-col mt-5 items-center max-lg:items-end'>
+        <aside className='flex flex-col mt-5 items-end'>
           <div className="flex flex-col gap-1">
             <label className='themeSwitcherTwo shadow-card h-fit relative inline-flex cursor-pointer select-none items-center justify-center rounded-md bg-white p-1'>
               <input

@@ -6,8 +6,8 @@ function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
 
   return (
-    <div className='flex flex-col h-full gap-20 bg-slate-100 dark:bg-gray-800'>
-      <div className='flex flex-col gap-6 mx-10'>
+    <div className='flex flex-col h-full w-full gap-20 bg-slate-100 dark:bg-gray-800'>
+      <div className='flex flex-col gap-6 px-10 md:px-40 lg:px-80 w-full'>
 
         <CVHeader />
 
@@ -24,10 +24,10 @@ function MyCvWeb() {
 
           <h1 className='text-black dark:text-white'>Stack | Technologies</h1>
 
-          <h1 className='text-black dark:text-white'>Projects</h1>
+          <h1 className='text-5xl text-black dark:text-white font-bold'>Projects</h1>
           <div className='flex flex-row items-center space-x-10'>
-            <Card name="1" />
-            <Card name="2" />
+            <Card index="1" />
+            <Card index="2" />
           </div>
 
           <h1 className='text-black dark:text-white'>Experience</h1>
