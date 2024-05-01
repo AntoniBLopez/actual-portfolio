@@ -1,6 +1,6 @@
 import IMAGES from "../assets/Images"
 import { useAppDispatch } from '../app/hooks';
-import { changeLanguage } from "../features/laguage/languageSlice";
+import { changeLanguage } from "../features/language/languageSlice";
 
 
 

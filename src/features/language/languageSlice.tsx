@@ -17,7 +17,7 @@ export const languageSlice = createSlice({
   name: 'language',
   initialState,
   reducers: {
-    isSpanish: state => {
+    changeLanguage: state => {
       state.value = !state.value
     },
   }
