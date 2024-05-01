@@ -1,11 +1,21 @@
 const IMAGES = {
   profile: new URL('./profile.jpg', import.meta.url).href,
-  spanish: new URL('./spain-flag.png', import.meta.url).href,
-  english: new URL('./america-flag.png', import.meta.url).href,
-  laptop:  new URL('./laptop-transparent.png', import.meta.url).href,
-  blackLaptop:  new URL('./black-modern-desktop.png', import.meta.url).href,
+  spanish: new URL('./languages/spanish.png', import.meta.url).href,
+  english: new URL('./languages/english.png', import.meta.url).href,
   projects: {
-    
+    bingogame: {
+      dark: new URL('./projects//dark/bingogame.png', import.meta.url).href,
+      white: new URL('./projects//white/bingogame.png', import.meta.url).href,
+    },
+    expirydates: {
+      dark: new URL('./projects//dark/expirydates.png', import.meta.url).href,
+      white: new URL('./projects//white/expirydates.png', import.meta.url).href,
+    },
+    socialmedia: {
+      dark: new URL('./projects//dark/socialmedia.png', import.meta.url).href,
+      white: new URL('./projects//white/socialmedia.png', import.meta.url).href,
+    },
+    blackLaptop:  new URL('./black-modern-desktop.png', import.meta.url).href,
   },
   icons: {
     socialMedia: {
