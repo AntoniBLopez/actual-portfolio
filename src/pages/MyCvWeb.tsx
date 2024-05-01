@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import CVHeader from '../components/CVHeader';
-import Card from '../components/Card'
+import ProjectCard from '../components/ProjectCard'
 
 function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
@@ -26,8 +26,8 @@ function MyCvWeb() {
           <div className='h-96'></div>
           <h1 className='text-5xl font-bold text-black dark:text-white'>Projects</h1>
           <div className='flex flex-row items-center space-x-10'>
-            <Card index="1" />
-            <Card index="2" />
+            <ProjectCard project='bingogame' />
+            <ProjectCard project='socialmedia' />
           </div>
 
           <h1 className='text-5xl font-bold text-black dark:text-white'>Experience</h1>

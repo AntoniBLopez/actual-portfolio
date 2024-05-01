@@ -5,17 +5,16 @@ const IMAGES = {
   projects: {
     bingogame: {
       dark: new URL('./projects//dark/bingogame.png', import.meta.url).href,
-      white: new URL('./projects//white/bingogame.png', import.meta.url).href,
+      light: new URL('./projects//light/bingogame.png', import.meta.url).href,
     },
     expirydates: {
       dark: new URL('./projects//dark/expirydates.png', import.meta.url).href,
-      white: new URL('./projects//white/expirydates.png', import.meta.url).href,
+      light: new URL('./projects//light/expirydates.png', import.meta.url).href,
     },
     socialmedia: {
       dark: new URL('./projects//dark/socialmedia.png', import.meta.url).href,
-      white: new URL('./projects//white/socialmedia.png', import.meta.url).href,
+      light: new URL('./projects//light/socialmedia.png', import.meta.url).href,
     },
-    blackLaptop:  new URL('./black-modern-desktop.png', import.meta.url).href,
   },
   icons: {
     socialMedia: {
@@ -73,4 +72,5 @@ const IMAGES = {
   }
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default IMAGES;
