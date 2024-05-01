@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import isLightModeSlice from '../features/lightMode/lightModeSlice'
-import screenSizeSlice from '../features/screenSize/screenSizeSlice'
-import languageSlice from '../features/language/languageSlice'
+import isLightModeSlice from '../store/slices/lightMode.tsx'
+import screenSizeSlice from '../store/slices/screenSize.ts'
+import languageSlice from '../store/slices/language'
 
 export const store = configureStore({
   reducer: {isLightModeSlice, screenSizeSlice, languageSlice}

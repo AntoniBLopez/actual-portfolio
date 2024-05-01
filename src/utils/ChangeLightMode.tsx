@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import IMAGES from '../assets/Images';
-import { changeLightMode } from '../features/lightMode/lightModeSlice';
+import { changeLightMode } from '../store/slices/lightMode.tsx';
 
 
 

@@ -2,7 +2,7 @@ import { useState } from "react"
 import IMAGES from "../assets/Images"
 import Languages from "../translate/Languages"
 import { useAppSelector, useAppDispatch } from '../app/hooks';
-import { changeScreenSize } from "../features/screenSize/screenSizeSlice";
+import { changeScreenSize } from "../store/slices/screenSize";
 import ChangeLightMode from "../utils/ChangeLightMode";
 import ChooseLanguage from "../utils/ChooseLanguage";
 
