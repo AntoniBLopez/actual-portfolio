@@ -18,7 +18,7 @@ function CVHeader() {
   window.onresize = handleResizedScreen
 
   return (
-    <header className='grid grid-flow-col mt-5 gap-10 max-'>
+    <header className='grid grid-flow-col my-10 gap-10 max-'>
       <main className='flex flex-row w-fit gap-10 items-center justify-start'>
         <picture>
           <img className='w-24 lg:w-36 h-24 lg:h-36 rounded-full object-cover' src={IMAGES.profile} alt="This is the profile photo of the cv" />

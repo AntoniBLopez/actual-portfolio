@@ -13,13 +13,9 @@ function Card({ project }: { project: keyof typeof IMAGES.projects }) {
   }
 
   return (
-    <>
-      <div className="">
-        <picture>
-          <img src={printProject(project, mode)} alt="Laptop image that has a project" />
-        </picture>
-      </div>
-    </>
+    <picture className="max-w-[300px]">
+      <img src={printProject(project, mode)} alt="Laptop image that has a project" />
+    </picture>
   )
 }
 
