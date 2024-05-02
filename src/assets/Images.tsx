@@ -11,9 +11,9 @@ const IMAGES = {
       dark: new URL('./projects/dark/expirydates.png', import.meta.url).href,
       light: new URL('./projects/light/expirydates.png', import.meta.url).href,
     },
-    socialmedia: {
-      dark: new URL('./projects/dark/socialmedia.png', import.meta.url).href,
-      light: new URL('./projects/light/socialmedia.png', import.meta.url).href,
+    socialmediaproject: {
+      dark: new URL('./projects/dark/socialmediaproject.png', import.meta.url).href,
+      light: new URL('./projects/light/socialmediaproject.png', import.meta.url).href,
     },
   },
   icons: {

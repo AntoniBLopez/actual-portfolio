@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'mobile1autoauto': '60% 1fr 1fr',
+        'lg1autoauto': '70% 1fr 1fr',
+      },
       dropShadow: {
         '3xl': '0px 0px 10px #0061FF',
       },

@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import CVHeader from '../components/CVHeader';
 import ProjectCard from '../components/ProjectCard'
 
+const projectsList = ['bingogame', 'socialmediaproject', 'expirydates'] as const
+
 function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
 
@@ -17,9 +19,12 @@ function MyCvWeb() {
 
         <section className='w-full'>
           <h1 className='mb-10 text-5xl font-bold text-black dark:text-white'>Projects</h1>
-          <div className='flex flex-row gap-10 items-center space-x-10 justify-center'>
-            <ProjectCard project='bingogame' />
-            <ProjectCard project='socialmedia' />
+          <div className='flex flex-wrap gap-10 items-center justify-center'>
+            {
+              projectsList.map(el => {
+                return <ProjectCard project={el} />
+              })
+            }
           </div>
         </section>
 
