@@ -22,7 +22,16 @@ function MyCvWeb() {
           <div className='flex flex-wrap gap-10 items-center justify-center'>
             {
               projectsList.map(el => {
-                return <ProjectCard project={el} />
+                return <ProjectCard
+                  project={el}
+                  haveGithub={el === 'expirydates' ? true : false}
+                  figmaLink={el === 'expirydates'
+                    ? 'https://www.figma.com/file/UFwTMR5ZfRx4pFKIZtYexg/AO-Expiry-Dates-App?type=design&node-id=0%3A1&mode=design&t=mFoQq2AYaMoJuk0h-1'
+                    : el === 'socialmediaproject'
+                      ? 'https://www.figma.com/file/GvhFMjkPIVvp92fT2k7kdO/Social-Media-App?type=design&node-id=0%3A1&mode=design&t=nGjjEIrU5K3Ead7y-1'
+                      : ''
+                  }
+                />
               })
             }
           </div>

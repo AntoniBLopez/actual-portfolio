@@ -1,7 +1,7 @@
 import { useAppSelector } from "../app/hooks"
 import IMAGES from "../assets/Images"
 
-function Card({ project }: { project: keyof typeof IMAGES.projects }) {
+function Card({ project, haveGithub, figmaLink }: { project: keyof typeof IMAGES.projects, haveGithub: boolean, figmaLink: string }) {
   const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
   const mode = isLightMode ? 'light' : 'dark'
 
@@ -19,15 +19,32 @@ function Card({ project }: { project: keyof typeof IMAGES.projects }) {
       </picture>
       <div className="grid grid-cols-lg1autoauto max-mobile:grid-cols-mobile1autoauto mx-10 gap-3 justify-center">
         <button
-        className="btn btn-outline px-3 text-2xl text-black dark:text-white border-gray-300 rounded-full"
-        onClick={() => window.open(`https://${project}.fly.dev/`)}
+          className="btn btn-outline px-3 text-2xl text-black dark:text-white border-gray-300 rounded-full"
+          onClick={() => window.open(`https://${project}.fly.dev/`)}
         >See Live</button>
-        <button className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center">
-          <img className="w-10 h-10" src={isLightMode ? IMAGES.icons.socialMedia.github.light : IMAGES.icons.socialMedia.github.dark} alt="GitHub Icon clickable" />
+        <button
+          className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center"
+          onClick={() => window.open(`https://${haveGithub ? 'github' : 'gitlab'}.com/AntoniBLopez/${project}`)}
+        >
+          <img
+            className="w-10 h-10"
+            src={isLightMode
+              ? IMAGES.icons.socialMedia[haveGithub ? 'github' : 'gitlab'].light
+              : IMAGES.icons.socialMedia[haveGithub ? 'github' : 'gitlab'].dark
+            }
+            alt={`${haveGithub ? 'Github' : 'Gitlab'} Icon clickable`} />
         </button>
-        <button className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center">
-          <img className="w-10 h-10" src={isLightMode ? IMAGES.icons.socialMedia.gitlab.light : IMAGES.icons.socialMedia.gitlab.dark} alt="GitLab Icon clickable" />
-        </button>
+        {figmaLink !== ''
+          &&
+          < button
+            className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center"
+            onClick={() => window.open(figmaLink)}
+          >
+            <div className="w-9 h-9">
+            {IMAGES.icons.socialMedia.figma}
+            </div>
+          </button>
+        }
       </div>
     </div >
   )
