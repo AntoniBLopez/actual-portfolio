@@ -15,6 +15,8 @@ function Card({ project }: { project: keyof typeof IMAGES.projects }) {
   return (
     <picture className="max-w-[300px]">
       <img src={printProject(project, mode)} alt="Laptop image that has a project" />
+      <button className="btn btn-outline w-72 rounded-full hover:bg-primary hover:text-white">See Live</button>
+      <button className="btn btn-outline w-fit h-fit p-5 rounded-full">{IMAGES.icons.socialMedia.youtube}</button>
     </picture>
   )
 }
