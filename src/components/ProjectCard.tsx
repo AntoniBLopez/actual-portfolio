@@ -5,17 +5,10 @@ function Card({ project, haveGithub, figmaLink }: { project: keyof typeof IMAGES
   const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
   const mode = isLightMode ? 'light' : 'dark'
 
-  const printProject = (project: keyof typeof IMAGES.projects, type: 'dark' | 'light') => {
-    if (Object.prototype.hasOwnProperty.call(IMAGES.projects[project], type)) {
-      return IMAGES.projects[project][type]
-    }
-    return 'Project not found'
-  }
-
   return (
     <div className="flex flex-col gap-3">
       <picture className="max-w-[300px]">
-        <img src={printProject(project, mode)} alt="Laptop image that has a project" />
+        <img src={IMAGES.projects[project][mode]} alt="Laptop image that has a project" />
       </picture>
       <div className="grid grid-cols-lg1autoauto max-mobile:grid-cols-mobile1autoauto mx-10 gap-3 justify-center">
         <button
@@ -28,21 +21,16 @@ function Card({ project, haveGithub, figmaLink }: { project: keyof typeof IMAGES
         >
           <img
             className="w-10 h-10"
-            src={isLightMode
-              ? IMAGES.icons.socialMedia[haveGithub ? 'github' : 'gitlab'].light
-              : IMAGES.icons.socialMedia[haveGithub ? 'github' : 'gitlab'].dark
-            }
+            src={IMAGES.icons.socialMedia[haveGithub ? 'github' : 'gitlab'][mode]}
             alt={`${haveGithub ? 'Github' : 'Gitlab'} Icon clickable`} />
         </button>
         {figmaLink !== ''
           &&
           < button
-            className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center"
+            className="btn btn-outline rounded-full h-full p-2 justify-self-center"
             onClick={() => window.open(figmaLink)}
           >
-            <div className="w-9 h-9">
-            {IMAGES.icons.socialMedia.figma}
-            </div>
+            <img className="w-8 h-8" src={IMAGES.icons.socialMedia.figma[mode]} alt="Laptop image that has a project" />
           </button>
         }
       </div>
