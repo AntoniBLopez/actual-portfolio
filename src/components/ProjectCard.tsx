@@ -18,7 +18,10 @@ function Card({ project }: { project: keyof typeof IMAGES.projects }) {
         <img src={printProject(project, mode)} alt="Laptop image that has a project" />
       </picture>
       <div className="grid grid-cols-lg1autoauto max-mobile:grid-cols-mobile1autoauto mx-10 gap-3 justify-center">
-        <button className="btn btn-outline px-3 text-2xl text-black dark:text-white border-gray-300 rounded-full">See Live</button>
+        <button
+        className="btn btn-outline px-3 text-2xl text-black dark:text-white border-gray-300 rounded-full"
+        onClick={() => window.open(`https://${project}.fly.dev/`)}
+        >See Live</button>
         <button className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center">
           <img className="w-10 h-10" src={isLightMode ? IMAGES.icons.socialMedia.github.light : IMAGES.icons.socialMedia.github.dark} alt="GitHub Icon clickable" />
         </button>
