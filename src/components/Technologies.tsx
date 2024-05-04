@@ -38,7 +38,7 @@ export const Technologies = ({ item }: { item: { id: number, name: string, image
       >
         {hoveredIndex === item.id && (
           <motion.div
-            className="absolute -top-14 left-4 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
+            className="absolute -top-12 left-4 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
             initial={{ opacity: 0, y: 20, scale: 0.6 }}
             animate={{
               opacity: 1,
