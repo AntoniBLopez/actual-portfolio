@@ -2,6 +2,11 @@ const IMAGES = {
   profile: new URL('./profile.jpg', import.meta.url).href,
   spanish: new URL('./languages/spanish.png', import.meta.url).href,
   english: new URL('./languages/english.png', import.meta.url).href,
+  technologies: {
+    html: new URL('./technologies/html.png', import.meta.url).href,
+    css: new URL('./technologies/css.png', import.meta.url).href,
+    react: new URL('./technologies/react.png', import.meta.url).href,
+  },
   projects: {
     bingogame: {
       dark: new URL('./projects/dark/bingogame.png', import.meta.url).href,

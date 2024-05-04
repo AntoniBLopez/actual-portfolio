@@ -6,7 +6,7 @@ import { changeScreenSize } from "../store/slices/screenSize";
 import ChangeLightMode from "../utils/ChangeLightMode";
 import ChooseLanguage from "../utils/ChooseLanguage";
 
-function CVHeader() {
+function Header() {
   const [menuOpened, setMenuOpened] = useState(false)
   const isSpanish = useAppSelector(state => state.languageSlice.value)
   const screenSize = useAppSelector(state => state.screenSizeSlice.value)
@@ -82,4 +82,4 @@ function CVHeader() {
   )
 }
 
-export default CVHeader
+export default Header
