@@ -1,8 +1,9 @@
 import { useRef } from 'react'
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectCard'
-import Technologies from '../components/Technologies';
+// import Technologies from '../components/Technologies';
 import IMAGES from '../assets/Images';
+import { Technologies } from '../components/Technologies';
 
 const projectsList = ['bingogame', 'socialmediaproject', 'expirydates'] as const
 
@@ -10,6 +11,7 @@ function MyCvWeb() {
   const container = useRef<HTMLDivElement>(null);
   const technologiesList = Object.keys(IMAGES.technologies)
 
+  console.log(technologiesList, 'technologiesList')
   return (
     <div className='flex flex-col h-full w-full px-10 md:px-40 lg:px-80 bg-slate-100 dark:bg-gray-800'>
 
@@ -43,13 +45,13 @@ function MyCvWeb() {
 
         <h1 className='text-5xl font-bold text-black dark:text-white'>Technologies</h1>
         <div className='flex flex-wrap gap-10 items-center justify-center'>
+        <div className='h-40'>In proces...</div>
           {
-            technologiesList.map((el, i) => {
-              return <Technologies key={i} tech={el} />
+            technologiesList.map((tech, i) => {
+              return <Technologies key={i} item={{ id: i, name: tech, image: IMAGES.technologies[tech as keyof typeof IMAGES.technologies] }} />
             })
           }
         </div>
-        <div className='h-40'>In proces...</div>
 
 
         <h1 className='text-5xl font-bold text-black dark:text-white'>Experience</h1>
