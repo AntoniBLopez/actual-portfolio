@@ -32,13 +32,13 @@ export const Technologies = ({ item }: { item: { id: number, name: string, image
   return (
     <>
       <div
-        className="-mr-4  relative group"
+        className="relative group"
         onMouseEnter={() => setHoveredIndex(item.id)}
         onMouseLeave={() => setHoveredIndex(null)}
       >
         {hoveredIndex === item.id && (
           <motion.div
-            className="absolute -top-12 left-4 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
+            className="absolute items-center justify-center rounded-md px-4 py-2 -top-14 left-4 text-xs bg-black z-50 shadow-xl"
             initial={{ opacity: 0, y: 20, scale: 0.6 }}
             animate={{
               opacity: 1,
@@ -55,13 +55,13 @@ export const Technologies = ({ item }: { item: { id: number, name: string, image
           >
             <div className="absolute inset-x-5 z-30 w-[50%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
             <div className="absolute left-4 w-[50%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
-            <div className="font-bold text-white relative z-30 text-base">
+            <div className="font-bold text-white relative z-30 text-xl">
               {item.name}
             </div>
           </motion.div>
         )}
-        <div onMouseMove={handleMouseMove} className="p-2 border-2 rounded-full group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500">
-          <img className="object-top w-20 h-auto " src={item.image} alt={item.name} />
+        <div onMouseMove={handleMouseMove} className={`${item.name === 'mysql' ? 'p-5': 'p-3'} border-2 rounded-full group-hover:scale-110 group-hover:z-30 border-gray-200 dark:border-white relative transition duration-100`}>
+          <img className={`object-top ${item.name === 'mysql' ? 'w-16' : 'w-20'} h-auto`} src={item.image} alt={item.name} />
         </div>
       </div>
     </>

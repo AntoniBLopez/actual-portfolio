@@ -12,7 +12,7 @@ function ChooseLanguage() {
   }
 
   return (
-    <div className='flex flex-row h-fit items-center gap-2 justify-center'>
+    <div className='flex flex-row h-fit items-center gap-2 justify-center self-center'>
       <img src={IMAGES.spanish} className='w-10 h-10' alt="" />
       <label className="relative inline-flex flex-col cursor-pointer items-center">
         <input type="checkbox" className="peer sr-only" onChange={handleChange} />

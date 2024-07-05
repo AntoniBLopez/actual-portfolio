@@ -1,7 +1,10 @@
 import { useAppSelector } from "../app/hooks"
 import IMAGES from "../assets/Images"
+import Languages from "../translate/Languages"
 
 function Card({ project, haveGithub, figmaLink }: { project: keyof typeof IMAGES.projects, haveGithub: boolean, figmaLink: string }) {
+
+  const isSpanish = useAppSelector(state => state.languageSlice.value)
   const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
   const mode = isLightMode ? 'light' : 'dark'
 
@@ -14,7 +17,7 @@ function Card({ project, haveGithub, figmaLink }: { project: keyof typeof IMAGES
         <button
           className="btn btn-outline px-3 text-2xl text-black dark:text-white border-gray-300 rounded-full"
           onClick={() => window.open(`https://${project}.fly.dev/`)}
-        >See Live</button>
+        >{isSpanish ? Languages.es.projectButton : Languages.en.projectButton}</button>
         <button
           className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center"
           onClick={() => window.open(`https://${haveGithub ? 'github' : 'gitlab'}.com/AntoniBLopez/${project}`)}
