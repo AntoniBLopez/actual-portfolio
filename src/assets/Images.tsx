@@ -3,8 +3,8 @@ const IMAGES = {
   spanish: new URL('./languages/spanish.png', import.meta.url).href,
   english: new URL('./languages/english.png', import.meta.url).href,
   technologies: {
-    html: new URL('./technologies/html.png', import.meta.url).href,
-    css: new URL('./technologies/css.png', import.meta.url).href,
+    // html: new URL('./technologies/html.png', import.meta.url).href,
+    // css: new URL('./technologies/css.png', import.meta.url).href,
     react: new URL('./technologies/react.png', import.meta.url).href,
     typescript: new URL('./technologies/typescript.png', import.meta.url).href,
     mongodb: new URL('./technologies/mongodb.png', import.meta.url).href,

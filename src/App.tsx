@@ -1,7 +1,7 @@
 import MyCvWeb from './pages/MyCvWeb'
 // import Home from './pages/Home'
 import { useAppSelector } from './app/hooks';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
@@ -11,8 +11,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* <Route path='/' element={<Home />} /> */}
-          <Route path='/' element={<Navigate to='/cv' />} />
-          <Route path='/cv' element={<MyCvWeb />} />
+          {/* <Route path='/' element={<Navigate to='/cv' />} /> */}
+          <Route path='/' element={<MyCvWeb />} />
+          {/* <Route path='/cv' element={<MyCvWeb />} /> */}
           {/* <Route path='/home'>
             <Route index element={isAuth ? <HomePage /> : <Navigate to='/' />} />
             <Route path='profile/:userId' element={isAuth ? <ProfilePage /> : <Navigate to='/' />} />

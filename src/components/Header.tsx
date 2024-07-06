@@ -20,7 +20,7 @@ function Header({isSticky}: {isSticky: boolean}) {
 
   return (
     <>
-      <header className={`grid grid-flow-col py-10 gap-10 ${isSticky ? 'fixed top-10 lg:left-[12.5%] lg:w-[75%] rounded-full py-5 px-10 md:px-40 lg:px-16 bg-slate-300 dark:bg-gray-700 bg-opacity-80 dark:bg-opacity-80 drop-shadow-md' : ''}`}>
+      <header className={`grid grid-flow-col py-10 gap-10 ${isSticky ? 'fixed top-5 lg:left-[12.5%] lg:w-[75%] rounded-full py-5 px-10 md:px-40 lg:px-16 bg-slate-300 dark:bg-gray-700 bg-opacity-80 dark:bg-opacity-80 drop-shadow-md' : ''}`}>
         <main className='flex flex-row w-fit gap-10 items-center justify-start'>
           <picture className='self-start'>
             <img className={`${isSticky ? 'w-16 h-16 lg:w-24 lg:h-24 self-start' : 'w-24 h-24 lg:w-36 lg:h-36'} transition-all duration-500 rounded-full object-cover`} src={IMAGES.profile} alt="This is the profile photo of the cv" />
@@ -61,7 +61,7 @@ function Header({isSticky}: {isSticky: boolean}) {
         }
         {screenSize > 1024
           ?
-          <aside className='flex flex-col mt-5 items-end'>
+          <aside className='flex flex-col mt-6 items-end'>
             <div className={`flex gap-1 ${isSticky ? 'flex-row gap-4 transition-all duration-500' : 'flex-col-reverse'}`}>
 
               <ChooseLanguage />
