@@ -14,5 +14,10 @@ html {
 
 body {
   font-size: 1.6rem; /* dejamos los tamaños de fuente por defecto */
+  height: 100%;
   /* color: white; */
+}
+
+#root {
+  height: 100%;
 }

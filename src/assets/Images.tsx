@@ -12,6 +12,14 @@ const IMAGES = {
     nodejs: new URL('./technologies/nodejs.png', import.meta.url).href,
   },
   projects: {
+    myNetWorthApp: {
+      dark: new URL('./projects/dark/myNetWorthApp.png', import.meta.url).href,
+      light: new URL('./projects/light/myNetWorthApp.png', import.meta.url).href,
+    },
+    vokabeltrainer: {
+      dark: new URL('./projects/dark/vokabeltrainer.png', import.meta.url).href,
+      light: new URL('./projects/light/vokabeltrainer.png', import.meta.url).href,
+    },
     bingogame: {
       dark: new URL('./projects/dark/bingogame.png', import.meta.url).href,
       light: new URL('./projects/light/bingogame.png', import.meta.url).href,

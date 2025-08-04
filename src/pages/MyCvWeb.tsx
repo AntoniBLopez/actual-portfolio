@@ -4,10 +4,15 @@ import ProjectCard from '../components/ProjectCard'
 // import Technologies from '../components/Technologies';
 import IMAGES from '../assets/Images';
 import { Technologies } from '../components/Technologies';
+import Languages from '../translate/Languages';
+import { useAppSelector } from '../app/hooks';
 
-const projectsList = ['bingogame', 'socialmediaproject', 'expirydates'] as const
+// const projectsList: (keyof typeof IMAGES.projects)[] = ['bingogame', 'socialmediaproject', 'expirydates']
+const projectsList: (keyof typeof IMAGES.projects)[] = ['myNetWorthApp', 'vokabeltrainer', 'bingogame']
 
 function MyCvWeb() {
+
+  const isSpanish = useAppSelector(state => state.languageSlice.value)
 
   const [isSticky, setIsSticky] = useState(false)
   const container = useRef<HTMLDivElement>(null);
@@ -37,7 +42,9 @@ function MyCvWeb() {
 
       <main className='flex flex-col gap-20'>
         <span>
-          <h3 className='text-black dark:text-white'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, laborum eos! Odit blanditiis vitae iure asperiores omnis adipisci, harum, aperiam vero doloribus consequatur dolores quis numquam nobis illo iste ducimus.</h3>
+          <h3 className='text-black dark:text-white'>
+            {isSpanish ? Languages.es.aboutMe : Languages.en.aboutMe}
+          </h3>
         </span>
 
         <section className='flex flex-col w-full gap-10'>
@@ -49,6 +56,7 @@ function MyCvWeb() {
                   key={index}
                   project={el}
                   haveGithub={el === 'expirydates' ? true : false}
+                  haveGitlab={el === 'bingogame' ? true : false}
                   figmaLink={el === 'expirydates'
                     ? 'https://www.figma.com/file/UFwTMR5ZfRx4pFKIZtYexg/AO-Expiry-Dates-App?type=design&node-id=0%3A1&mode=design&t=mFoQq2AYaMoJuk0h-1'
                     : el === 'socialmediaproject'

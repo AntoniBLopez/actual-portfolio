@@ -1,8 +1,16 @@
 import { useAppSelector } from "../app/hooks"
 import IMAGES from "../assets/Images"
 import Languages from "../translate/Languages"
+import { PROJECTS } from "../utils/Projects"
 
-function Card({ project, haveGithub, figmaLink }: { project: keyof typeof IMAGES.projects, haveGithub: boolean, figmaLink: string }) {
+interface ProjectCardProps {
+  project: keyof typeof IMAGES.projects
+  haveGithub: boolean
+  haveGitlab: boolean
+  figmaLink: string
+}
+
+function Card({ project, haveGithub, haveGitlab, figmaLink }: ProjectCardProps) {
 
   const isSpanish = useAppSelector(state => state.languageSlice.value)
   const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
@@ -16,17 +24,21 @@ function Card({ project, haveGithub, figmaLink }: { project: keyof typeof IMAGES
       <div className="grid grid-cols-lg1autoauto max-mobile:grid-cols-mobile1autoauto mx-10 gap-3 justify-center">
         <button
           className="btn btn-outline px-3 text-2xl text-black dark:text-white border-gray-300 rounded-full"
-          onClick={() => window.open(`https://${project}.fly.dev/`)}
+          onClick={() => window.open(PROJECTS[project], '_blank')}
         >{isSpanish ? Languages.es.projectButton : Languages.en.projectButton}</button>
-        <button
-          className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center"
-          onClick={() => window.open(`https://${haveGithub ? 'github' : 'gitlab'}.com/AntoniBLopez/${project}`)}
-        >
-          <img
-            className="w-10 h-10"
-            src={IMAGES.icons.socialMedia[haveGithub ? 'github' : 'gitlab'][mode]}
-            alt={`${haveGithub ? 'Github' : 'Gitlab'} Icon clickable`} />
-        </button>
+        {
+          haveGithub || haveGitlab
+          &&
+          <button
+            className="btn btn-outline w-fit h-fit p-1 rounded-full justify-self-center"
+            onClick={() => window.open(`https://${haveGithub ? 'github' : 'gitlab'}.com/AntoniBLopez/${project}`)}
+          >
+            <img
+              className="w-10 h-10"
+              src={IMAGES.icons.socialMedia[haveGithub ? 'github' : 'gitlab'][mode]}
+              alt={`${haveGithub ? 'Github' : 'Gitlab'} Icon clickable`} />
+          </button>
+        }
         {figmaLink !== ''
           &&
           < button

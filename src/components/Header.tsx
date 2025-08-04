@@ -47,7 +47,7 @@ function Header({isSticky}: {isSticky: boolean}) {
               &&
               <div className='flex flex-row gap-3'>
                 <button onClick={() => window.open('https://www.linkedin.com/in/antoniblopez')}>{IMAGES.icons.socialMedia.linkedin}</button>
-                <button onClick={() => window.open('https://www.youtube.com/@AntoniLopezDev')}>{IMAGES.icons.socialMedia.youtube}</button>
+                {/* <button onClick={() => window.open('https://www.youtube.com/@AntoniLopezDev')}>{IMAGES.icons.socialMedia.youtube}</button> */}
               </div>
             }
           </section>
@@ -56,7 +56,7 @@ function Header({isSticky}: {isSticky: boolean}) {
           &&
           <div className='flex flex-row gap-3 justify-center'>
             <button onClick={() => window.open('https://www.linkedin.com/in/antoniblopez')}>{IMAGES.icons.socialMedia.linkedin}</button>
-            <button onClick={() => window.open('https://www.youtube.com/@AntoniLopezDev')}>{IMAGES.icons.socialMedia.youtube}</button>
+            {/* <button onClick={() => window.open('https://www.youtube.com/@AntoniLopezDev')}>{IMAGES.icons.socialMedia.youtube}</button> */}
           </div>
         }
         {screenSize > 1024

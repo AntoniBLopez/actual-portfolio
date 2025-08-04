@@ -7,7 +7,7 @@ function App() {
   const isLightMode = useAppSelector(state => state.isLightModeSlice.value)
 
   return (
-    <div className={isLightMode ? 'light' : 'dark'}>
+    <div className={`h-full ${isLightMode ? 'light' : 'dark'}`}>
       <BrowserRouter>
         <Routes>
           {/* <Route path='/' element={<Home />} /> */}
